@@ -20,22 +20,22 @@ msgstr ""
 
 #: ../../source/settings.rst:2
 msgid "软件设置"
-msgstr "Software settings"
+msgstr "Settings"
 
 
 #: ../../source/settings.rst:5
 msgid "通用设置"
-msgstr "Universal settings"
+msgstr "General settings"
 
 
 #: ../../source/settings.rst:8
 msgid "气泡检测"
-msgstr "Bubble detection"
+msgstr "Balloon Detection"
 
 
 #: ../../source/settings.rst:10
 msgid "本工具的气泡检测使用百度EasyDL和Azure的目标检测服务。需要自行开通账号并训练。"
-msgstr "The tool's bubble detection uses Baidu's EasyDL and Azure Target Detection services. You need to open your own account and train."
+msgstr "The tool's balloon detection uses object detection services provided by Baidu EasyDL and Azure. You need to create your own account and train your own model."
 
 
 #: ../../source/settings.rst:12
@@ -45,17 +45,17 @@ msgstr "Recommended labeling methods:"
 
 #: ../../source/settings.rst:14
 msgid "选中所有气泡中的文字，选框尽量贴合文字。"
-msgstr "Check the text in all bubbles, and the marquee fits the text as closely as possible."
+msgstr "Box text areas in all balloons. Let the box fits the text as closely as possible."
 
 
 #: ../../source/settings.rst:18
 msgid "发布模型后，在菜单-文件-偏好设置-通用里设置发布了URL，同时还需要填写对应的API。"
-msgstr "After publishing the model, the URL is set in the menu-file-preferences-generic setting, and the corresponding API is also required."
+msgstr "After the model is published, you can set the URL through File-Preferences-General setting. The corresponding API key is also required."
 
 
 #: ../../source/settings.rst:21
 msgid "文字图像识别"
-msgstr "Text image recognition"
+msgstr "Text Image Recognition"
 
 
 #: ../../source/settings.rst:23
@@ -65,17 +65,17 @@ msgstr "The default address is: `<http://127.0.0.1:8082/classify>`_"
 
 #: ../../source/settings.rst:25
 msgid "请运行以下仓库的代码： `<https://github.com/xulihang/text-image-classifier>`_。"
-msgstr "Please run the code for the following warehouse:  `<https://github.com/xulihang/text-image-classifier>`_."
+msgstr "Please run the code in this repository:  `<https://github.com/xulihang/text-image-classifier>`_."
 
 
 #: ../../source/settings.rst:28
 msgid "自然场景文字检测"
-msgstr "Natural scene text detection"
+msgstr "Natural Scene Text Detection"
 
 
 #: ../../source/settings.rst:30
 msgid "支持使用EAST和CRAFT自然场景文字检测方法进行文字检测。"
-msgstr "Supports text detection using EAST and CRAFT natural scene text detection methods."
+msgstr "EAST and CRAFT natural scene text detection methods are supported."
 
 
 #: ../../source/settings.rst:32
@@ -85,16 +85,16 @@ msgstr "The default address is: `<http://127.0.0.1:8080/detect>`_"
 
 #: ../../source/settings.rst:34
 msgid "代码地址： `<https://github.com/xulihang/ImageTrans_SceneText_Detection>`_。"
-msgstr "Code address: `<https://github.com/xulihang/ImageTrans_SceneText_Detection>`_."
+msgstr "Code repository: `<https://github.com/xulihang/ImageTrans_SceneText_Detection>`_."
 
 
 #: ../../source/settings.rst:38
 msgid "API设置"
-msgstr "API settings"
+msgstr "API Settings"
 
 
 #: ../../source/settings.rst:40
 msgid "点击菜单-文件-偏好设置-API，可以设置百度、有道、微软、腾讯等OCR和机器翻译服务提供商的API。"
-msgstr "Click on the menu-file-preferences-API to set up APIs for OCR and machine translation service providers such as Baidu, Dodo, Microsoft, Tencent."
+msgstr "Click File->Preferences->API to set up APIs for OCR and machine translation services provided by Baidu, Youdao, Microsoft, Tencent, etc."
 
 

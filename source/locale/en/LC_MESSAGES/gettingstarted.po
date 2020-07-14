@@ -275,47 +275,47 @@ msgstr "Generate the Translated Picture"
 
 #: ../../source/gettingstarted.rst:149
 msgid "首先将图片比例调整为100%，之后点击预览，得到成品图。点击文件-导出当前图片为-JPG，结果将输出在对应图片的文件夹的out文件夹中。另一选项ORA支持将文件导出为多层图像格式ORA，该格式能保存图层信息，供PS、Gimp和Krita等图像编辑软件编辑。"
-msgstr "First switch the image scale to 100%, and then click preview to get the translated picture. Click File->Export the current picture to->JPG, and the result will be exported to the out folder in the picture folder. Another option, ORA, supports exporting files to multi-layer image format ORA, which holds layer information for image editing software such as PS, Gimp, and Krita."
+msgstr "First switch the image scale to 100%, and then click preview to get the translated picture. Click File->Export the current picture to->JPG, and the result will be exported to the out folder in the picture folder. Another option, ORA, supports exporting files to multi-layer image format ORA, which holds layer information for image editing software such as PS, GIMP, and Krita."
 
 
 #: ../../source/gettingstarted.rst:151
 msgid "除此以外，ImageTrans可支持导出PSD。"
-msgstr "In addition, ImageTrans supports exporting PSDs."
+msgstr "In addition, ImageTrans supports exporting as PSDs."
 
 
 #: ../../source/gettingstarted.rst:154
 msgid "设置文字样式"
-msgstr "Style text"
+msgstr "Style Text"
 
 
 #: ../../source/gettingstarted.rst:156
 msgid "设置文字样式主要有两个作用，一个是在ImageTrans中进行预览，一个是用于导出PSD时设置字体。"
-msgstr "There are two main roles in setting text styles, one is to preview in ImageTrans and the other to set the font when exporting PSD."
+msgstr "Setting text styles has effects in two processes: Preview translation in ImageTrans and export as PSDs."
 
 
 #: ../../source/gettingstarted.rst:158
 msgid "点击菜单-项目-设置-字体样式可以进行设置使用的字体、文字大小、行距、对齐方式等等。"
-msgstr "Click the menu-item-setting-font style to set the font used, text size, leading, alignment, and so on."
+msgstr "Click Project->Settings->Font Style to set the font name, font size, leading, alignment, and so on."
 
 
 #: ../../source/gettingstarted.rst:162
 msgid "如果要修改某个样式，请点击该样式以加载设置，修改后点击添加，然后删去原来的样式。排在第一的样式是默认样式。"
-msgstr "If you want to modify a style, tap the style to load the settings, click Add when you modify it, and then delete the original style. The first-place style is the default style."
+msgstr "If you want to modify a style, click the style to load the settings and then click Add when the setting is done. Remember to delete the original style. The first style will be the default style."
 
 
 #: ../../source/gettingstarted.rst:164
 msgid "因为Photoshop需要的字体名比较特殊，需要从PS中获得。方法是在PS中新建一张图片，建立一个文本框，设置所需字体，并完成文字编辑操作，是文本框处于非编辑状态。之后在ImageTrans中点击读取即可。非Windows系统需要使用readFont.jsx脚本。"
-msgstr "Because Photoshop requires a special font name, it needs to be obtained from PS. The method is to create a new picture in PS, create a text box, set the font you want, and complete the text editing operation, which is a non-edited text box. Then click Read in ImageTrans. Non-Windows systems require readFont.jsx scripts."
+msgstr "Because Photoshop requires a special font name, it needs to be obtained from PS. The way is to create a new picture in PS, create a text box, set the font you want, and complete the text editing operation, letting the text box in non-editing status. Then click Read in ImageTrans. Non-Windows systems have to use readFont.jsx scripts."
 
 
 #: ../../source/gettingstarted.rst:168
 msgid "可以给文字区域设置专门的字体样式。"
-msgstr "You can set a special font style for the text area."
+msgstr "You can set special font styles for text areas."
 
 
 #: ../../source/gettingstarted.rst:172
 msgid "另外也支持设置本地样式，除了全局文字样式包含的内容外，支持描边和旋转角度的设置。设置本地字体样式时会调出全局字体样式的设置界面，默认读取添加在末尾的样式为本地字体样式。"
-msgstr "Local styles are also supported, and stroke and rotation angles are supported in addition to what the global text style contains. Setting the local font style brings up the settings interface for the global font style, and the default read adds the style at the end of the style to the local font style."
+msgstr "Local styles are also supported. Stroke and rotation angles are supported in addition to what the global text style has. When setting the local font style, the interface for the global font style setting will appear. The last new-added style will be saved as the local font style."
 
 
 #: ../../source/gettingstarted.rst:177
@@ -325,6 +325,6 @@ msgstr "Batch"
 
 #: ../../source/gettingstarted.rst:179
 msgid "以上对单个图片的操作都可以通过菜单-项目-批处理对所有图片进行操作。"
-msgstr "All of the above actions on a single picture can be manipulated through menu-project-batch."
+msgstr "All of the above operations on a single picture can be perforemd in batch through Projects->Batch."
 
 
