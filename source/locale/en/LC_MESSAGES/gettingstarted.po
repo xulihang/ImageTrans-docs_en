@@ -38,7 +38,7 @@ msgid ""
 "需要使用Tesseract进行OCR的话请自行下载安装。这里提供一个Windows的绿色版本：`百度网盘（提取码：ktpt） "
 "<https://pan.baidu.com/s/1gJZyuntLetZEpFWI8XqkXA>`_，下载后将tesseract-"
 "ocr目录和ImageTrans放在一起。额外的语言包请放在 ``tesseract-ocr\\tessdata`` 目录下。"
-msgstr "If you need to use Tesseract for OCR, please install it by yourself. Here is a Windows version of Tesseract for download: `Baidu Netdisk (code: ktpt)<https://pan.baidu.com/s/1gJZyuntLetZEpFWI8XqkXA>`_ Put the tessseract-ocr folder under ImageTrans's folder. Put additional language data files place under ``tesseract-ocr\\tessdata``."
+msgstr "If you need to use Tesseract for OCR, please install it by yourself. Here is a Windows version of Tesseract for download: `Baidu Netdisk (code: ktpt) <https://pan.baidu.com/s/1gJZyuntLetZEpFWI8XqkXA>`_ Put the tessseract-ocr folder under ImageTrans's folder. Put additional language data files place under ``tesseract-ocr\\tessdata``."
 
 
 #: ../../source/gettingstarted.rst:11
@@ -105,7 +105,7 @@ msgstr "Import Pictures"
 
 #: ../../source/gettingstarted.rst:45
 msgid "菜单栏点击文件-导入图片文件夹，选择图片存在的位置。该操作会读取该文件夹下所有的子目录并导入存在的jpg、png文件。"
-msgstr "Clicks File->Import pictures (from a folder) and select in which folder the picture exists to import. It will read all the subfolders and import existing jpg, png files."
+msgstr "Click File->Import pictures (from a folder) and select in which folder the picture exists to import. It will read all the subfolders and import existing jpg, png files."
 
 
 #: ../../source/gettingstarted.rst:51
@@ -155,7 +155,7 @@ msgstr "Detect Balloons"
 
 #: ../../source/gettingstarted.rst:79
 msgid "选择语言和OCR引擎，点击菜单-编辑-自动识别气泡，可以自动识别气泡。"
-msgstr "Select the language and OCR engine, click on the Edit->Detect Balloons."
+msgstr "Select the language and OCR engine, click Edit->Detect Balloons."
 
 
 #: ../../source/gettingstarted.rst:84
@@ -200,7 +200,7 @@ msgstr "The XLSX file has the same content as TXT's."
 
 #: ../../source/gettingstarted.rst:104
 msgid "XLSX表格-根据目录建立工作表，按子目录保存图片名、原文和译文信息"
-msgstr "XLSX file - create worksheets based on folders will store picture names, source texts, and target text in separte sheets."
+msgstr "XLSX file - create worksheets based on folders. It will store picture names, source texts, and target text in separate sheets."
 
 
 #: ../../source/gettingstarted.rst:105
@@ -260,7 +260,7 @@ msgstr "Preview"
 
 #: ../../source/gettingstarted.rst:137
 msgid "点击左下角的预览替换效果，可以预览翻译效果。选择精确模式会自动识别文字进行抹除并修复背景，非精确模式则会用背景颜色进行遮盖。"
-msgstr "Click Preview translation in the lower left corner to preview the translation. The precision mode will detect text and reconstruct the background. The unprecision mode will just cover the area with the background color."
+msgstr "Click Preview translation in the lower left corner to preview the translation. The precision mode will detect text and reconstruct the background. The imprecision mode will just cover the area with the background color."
 
 
 #: ../../source/gettingstarted.rst:141
@@ -325,6 +325,6 @@ msgstr "Batch"
 
 #: ../../source/gettingstarted.rst:179
 msgid "以上对单个图片的操作都可以通过菜单-项目-批处理对所有图片进行操作。"
-msgstr "All of the above operations on a single picture can be perforemd in batch through Projects->Batch."
+msgstr "All of the above operations on a single picture can be perforemd in batch through Project->Batch."
 
 
