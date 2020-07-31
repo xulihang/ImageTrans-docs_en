@@ -55,7 +55,7 @@ msgstr "The following is for the cross-platform version:"
 msgid ""
 "下载ImageTrans的压缩包，解压到任意目录，双击ImageTrans.jar或者命令行输入 ``java -jar "
 "ImageTrans.jar`` 即可运行。"
-msgstr "Download ImageTrans's zip file, unzip it to any folder, double-click ImageTrans.jar or enter the command line ``java-jar ImageTrans.jar`` to run it."
+msgstr "Download ImageTrans's zip file, unzip it to any folder, double-click ImageTrans.jar or enter the command line ``java -jar ImageTrans.jar`` to run it."
 
 
 #: ../../source/gettingstarted.rst:17
