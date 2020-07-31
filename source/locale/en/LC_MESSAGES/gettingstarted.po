@@ -38,7 +38,7 @@ msgid ""
 "需要使用Tesseract进行OCR的话请自行下载安装。这里提供一个Windows的绿色版本：`百度网盘（提取码：ktpt） "
 "<https://pan.baidu.com/s/1gJZyuntLetZEpFWI8XqkXA>`_，下载后将tesseract-"
 "ocr目录和ImageTrans放在一起。额外的语言包请放在 ``tesseract-ocr\\tessdata`` 目录下。"
-msgstr "If you need to use Tesseract for OCR, please install it by yourself. Here is a Windows version of Tesseract for download: `Baidu Netdisk (code: ktpt) <https://pan.baidu.com/s/1gJZyuntLetZEpFWI8XqkXA>`_ Put the tessseract-ocr folder under ImageTrans's folder. Put additional language data files under ``tesseract-ocr\tessdata``."
+msgstr "If you need to use Tesseract for OCR, please install it by yourself. Here is a Windows version of Tesseract for download: `Baidu Netdisk (code: ktpt) <https://pan.baidu.com/s/1gJZyuntLetZEpFWI8XqkXA>`_ Put the tessseract-ocr folder under ImageTrans's folder. Put additional language data files under ``tesseract-ocr\\tessdata``."
 
 
 #: ../../source/gettingstarted.rst:11
