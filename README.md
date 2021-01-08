@@ -1,1 +1,1 @@
-# ImageTrans-docs_en
+# ImageTrans-doc
