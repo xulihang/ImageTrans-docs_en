@@ -4,19 +4,19 @@
 # Documentation package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2020.
 #
-#, fuzzy
+
 msgid ""
 msgstr ""
 "Project-Id-Version: ImageTrans Documentation 1.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-19 20:37+0800\n"
+"POT-Creation-Date: 2022-06-04 14:28+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.9.0\n"
+"Generated-By: Babel 2.10.1\n"
 
 #: ../../source/textarea_detection_and_text_reinjection.rst:2
 msgid "文字区域检测和译文回填"
@@ -84,17 +84,18 @@ msgstr "Because different comics have varous sizes, different text area detectio
 
 
 #: ../../source/textarea_detection_and_text_reinjection.rst:32
+
 msgid ""
 "文字区域检测的算法细节见此：`基于规则的漫画文字检测方法 <http://blog.xulihang.me/text-localization-"
-"for-comics/>`_"
-msgstr "The algorithm details of text area detection can be found here: `Rules-based comic text detection method <http://blog.xulihang.me/text-localization-for-comics/>`_"
+"for-comics/>`_。"
+msgstr "The algorithm details of text area detection can be found here: `Rules-based comic text detection method <http://blog.xulihang.me/text-localization-for-comics/>`_."
 
 
 #: ../../source/textarea_detection_and_text_reinjection.rst:34
 msgid ""
 "文字区域置信度获取是利用TensorFlow提供的脚本基于卷积神经网络预训练模型重新训练的，相关代码见此： "
 "`<https://github.com/xulihang/text-image-classifier>`_。"
-msgstr "The confidence of text areas is obtained using a CNN model retrained using TensorFlow's script. See the code here: `<https://github.com/xulihang/text-image-classifier>`_."
+msgstr "The confidence of text areas is obtained using a CNN model retrained using TensorFlow’s script. See the code here: `<https://github.com/xulihang/text-image-classifier>`_."
 
 
 #: ../../source/textarea_detection_and_text_reinjection.rst:36
@@ -108,8 +109,9 @@ msgstr "Natural Scene Text Detection"
 
 
 #: ../../source/textarea_detection_and_text_reinjection.rst:41
-msgid "自然场景文字检测功能允许用户调用EAST、CRAFT等开源自然场景文字检测方法，这类方法的准确率较高，并能检测倾斜文本，但一般需要花费较长的运行时间。"
-msgstr "The natural scene text detection allows users to call open source natural scene text detection methods such as EAST and CRAFT, which have high accuracy and can detect tilted text. But it generally take a long time to produce the result."
+
+msgid "自然场景文字检测功能允许用户调用DB、EAST、CRAFT等开源自然场景文字检测方法，这类方法的准确率较高，并能检测倾斜文本，但一般需要花费较长的运行时间。"
+msgstr "The natural scene text detection allows users to call open source natural scene text detection methods such as DB, EAST and CRAFT, which have high accuracy and can detect tilted text. But it generally take a long time to produce the result."
 
 
 #: ../../source/textarea_detection_and_text_reinjection.rst:45
@@ -165,28 +167,42 @@ msgstr "The following image shows the Mask Editor and the Text Remover, which ca
 
 
 #: ../../source/textarea_detection_and_text_reinjection.rst:67
+
 msgid ""
-"掩膜生成和图像修复支持调用插件以使用第三方的方法，现有的插件是 `Sickzil-machine "
-"<https://github.com/xulihang/SickZil-Machine>`_。"
-msgstr "There is plug-in support for mask generation and image inpainting to use third-party methods. The existing plug-in is `Sickzil-machine <https://github.com/xulihang/SickZil-Machine>`_."
+"掩膜生成和图像修复支持调用插件以使用第三方的方法，现有的插件是\\ `Sickzil-machine "
+"<https://github.com/xulihang/ImageTrans_plugins>`_\\ 和\\ `Lama "
+"<https://github.com/xulihang/ImageTrans_plugins/tree/master/LamaInpaint>`_。"
+msgstr "There is plug-in support for mask generation and image inpainting to use third-party methods. The existing plug-ins are `Sickzil-machine  <https://github.com/xulihang/ImageTrans_plugins>`_ and `Lama <https://github.com/xulihang/ImageTrans_plugins/tree/master/LamaInpaint>`_."
 
 
 #: ../../source/textarea_detection_and_text_reinjection.rst:70
+msgid "其它情况："
+msgstr "Other cases:"
+
+
+#: ../../source/textarea_detection_and_text_reinjection.rst:72
+msgid ""
+"如果存在无文字原图，可以通过\\ `无文字原图和纯文字图管理器 <https://github.com/xulihang/ImageTrans-"
+"docs/issues/199#issuecomment-1133639931>`_\\ 设置无文字原图，查看翻译时会直接使用原图。"
+msgstr "If a text-free original image exists, that text-free original image can be set through the `Textless Original Image and Pure-Text Image Manager <https://github.com/xulihang/ImageTrans-docs/issues/199 #issuecomment-1133639931>`_. The original image will be directly used when viewing the translated image."
+
+
+#: ../../source/textarea_detection_and_text_reinjection.rst:76
 msgid "译文放置"
 msgstr "Translation Replacement"
 
 
-#: ../../source/textarea_detection_and_text_reinjection.rst:72
+#: ../../source/textarea_detection_and_text_reinjection.rst:78
 msgid "根据文本框的大小和位置放置译文，支持自动根据文本框的大小调整译文大小，可以在项目设置里进行设置。"
 msgstr "You can adjust the location and size of the target text boxes. The font size will be automatically adjusted. You can set this in the project settings."
 
 
-#: ../../source/textarea_detection_and_text_reinjection.rst:76
+#: ../../source/textarea_detection_and_text_reinjection.rst:82
 msgid "颜色检测"
 msgstr "Color Detection"
 
 
-#: ../../source/textarea_detection_and_text_reinjection.rst:78
+#: ../../source/textarea_detection_and_text_reinjection.rst:84
 msgid "本工具能较粗略地自动检测背景颜色和文字颜色，点击编辑-颜色操作进行相关操作。"
 msgstr "This tool can automatically detect the background color and text color roughly. Click Edit->Color operations to do the detection."
 
