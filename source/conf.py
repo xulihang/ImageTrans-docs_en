@@ -20,7 +20,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'ImageTrans Documentation'
-copyright = '2019, Xu Lihang'
+copyright = '2024@Xu Lihang'
 author = 'Xu Lihang'
 
 # The short X.Y version
@@ -150,7 +150,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'imagetransdocumentation', 'ImageTrans Documentation Documentation',
+    (master_doc, 'imagetransdocumentation', 'ImageTrans Documentation',
      [author], 1)
 ]
 
@@ -161,7 +161,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'ImageTransDocumentation', 'ImageTrans Documentation Documentation',
+    (master_doc, 'ImageTransDocumentation', 'ImageTrans Documentation',
      author, 'ImageTransDocumentation', 'One line description of project.',
      'Miscellaneous'),
 ]
