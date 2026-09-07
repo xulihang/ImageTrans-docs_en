@@ -4,64 +4,28 @@ Getting Started
 Installation
 ------------
 
-Full Version
-+++++++++++++++
+For Windows, unzip the full version to any directory and run ImageTrans.exe. For Mac, open the dmg file to install ImageTrans into the Application directory.
 
-For Windows, unzip the full version to any folder and run ImageTrans.exe. For Mac, drag the app in the dmg file to Application.
-
-Cross Platform Version
-++++++++++++++++++++++++++
-
-Download ImageTrans's zip file, unzip it to any folder, double-click ImageTrans.jar or enter the command line ``java -jar ImageTrans.jar`` to run it.
-
-The software depends on JRE 11+. Please download and install it first. Download link: `Liberica JRE 11.0.19 full version <https://github.com/bell-sw/Liberica/releases/tag/11.0.19%2B7>`_
-
-ImageTrans also relies on OpenCV, please download the runtime file according to your system, unzip and put it under ImageTrans's folder. Download link: `GitHub <https://github.com/xulihang/ImageTrans-docs/releases/tag/opencv>`_
+For Linux, use it based on the template files and the Windows full version. It depends on files such as JRE, ONNXRuntime and OpenCV.
 
 Configuration of OCR and Machine Translation
 ++++++++++++++++++++++++++++++++++++++++++++++
 
-ImageTrans has integrated common online OCR and machine translation APIs. Usually, you need to apply for their API keys to call them. ImageTrans has included the API keys of some services, which can be used directly:
+The software has built-in local OCR such as PaddleOCR (rapid), mangaOCR, manga image translator 48px CTC OCR, Windows system OCR and macOS Vision OCR. It also supports online OCR services such as Baidu, Google, Youdao, Tencent and Ali. Online OCR requires setting up APIs in the Preferences.
 
-OCR: Baidu, OCRSPACE, Azure
+The software supports online machine translation services such as Baidu, Google, Youdao, Tencent, DeepL and Ali. Online machine translation services also require setting up APIs in the Preferences.
 
-Machine translation: Baidu, Tencent, Cloudtranslation, mymemory, DeepL KeyFree
+The software provides the free versions of Baidu Translation and Baidu OCR by default.
 
-In addition, some offline OCR and machine translation are also supported.
+The software supports using large language models to perform tasks such as OCR, translation and spell checking. Large language models need to set up APIs in the Preferences. You can use services such as ChatGPT, Gemini, DeepSeek and Sakura, and it also supports local deployment with clients such as llama.cpp, Ollama and LM Studio.
 
-Offline OCR:
+OCR and machine translation can be extended by writing plug-ins to support more services.
 
-1. Tesseract
+Related blog posts:
 
-   If you need to use Tesseract for OCR, please install it by yourself (`Link <https://tesseract-ocr.github.io/tessdoc/Downloads.html>`_) and specify the path of Tesseract in ImageTrans.
-
-   Here is an installer version for Windows: `UB-Mannheim Tesseract5 <https://github.com/UB-Mannheim/tesseract/releases/download/v5.4.0.20240606/tesseract-ocr-w64-setup-5.4.0.20240606.exe>`_.
-
-2. The built-in OCR in Windows 10
-
-   Windows 10 comes with built-in OCR, but you need to install the language environment first. Actually, it has the same engine as Azure and OCRSPACE. This OCR engine in ImageTrans is called WinRT because it is based on the `Windows Runtime API <https://docs.microsoft.com/en-us/uwp/api/windows.media.ocr?view=winrt-20348>`_.
-
-3. mangaOCR
-
-   This OCR can accurately recognize the text of manga. Installation instructions: `<https://github.com/xulihang/ImageTrans_plugins/tree/master/mangaOCR>`_.
-
-4. macOCR
-
-   The system's built-in OCR on macOS 10.15+. Details: `<https://github.com/xulihang/ImageTrans-docs/issues/341>`_.
-
-5. ABBYY
-
-   It supports calling ABBYY Finereader for OCR. You need to specify the path of FineCMD.exe in the Preferences.
-
-6. PaddleOCR, EasyOCR
-
-   You need to install Python and the above software and run them with the server scripts provided, like `the server of PaddleOCR <https://github.com/xulihang/ImageTrans_plugins/tree/master/paddleOCR/server>`_.
-
-Offline machine translation:
-
-1. OPUS-CAT. Opus-CAT is the offline machine translation engine by the Helsinki Natural Language Processing Group. Download and install it from `here <https://helsinki-nlp.github.io/OPUS-CAT/install>`_ and install the OPUS-CAT machine translation `plug-in <https://github.com/xulihang/ImageTrans-docs/issues/177#issuecomment-1070305647>`_ to use it.
-2. eztrans xp. This is a Japanese-Korean translation software. Check out `issue29  <https://github.com/xulihang/ImageTrans-docs/issues/29#issuecomment-818754544>`_ for its usage.
-
+* `How to Write an ImageTrans Plug-in <https://www.basiccat.org/how-to-write-a-plugin-for-imagetrans/>`_
+* `Using ChatGPT in ImageTrans to Aid Translation <https://www.basiccat.org/ChatGPT-image-translator/>`_
+* `How to Use Google Cloud in ImageTrans <https://www.basiccat.org/how-to-use-google-cloud-in-imagetrans/>`_
 
 Verification
 ------------
@@ -287,6 +251,7 @@ Below is a table of supported tags:
    "fontfamily", "Font family", "[fontname=Arial]text[/fontname]"
    "fontsize", "Font size", "[fontsize=32]text[/fontsize]"
    "fontcolor", "Font color", "[fontcolor=#FF0000]text[/fontcolor]"
+   "tracking", "Tracking", "[tracking=2]text[/tracking]"
 
 You can tap the button R to the right of the editing area to enable the rich text editor for quick insertion of the corresponding BBCode.
 
@@ -311,4 +276,5 @@ Currently, the following toolbars are supported:
 5. Font.
 6. Sort. It can detect panels and display the ranking numbers on text areas.
 7. Source image related. It can adjust the transparency of the translation layer and align text areas with the original text areas.
-8. Edit. It can rotate or flip images.
+8. Workflow. Run custom workflows quickly.
+9. Edit. It can rotate or flip images.
