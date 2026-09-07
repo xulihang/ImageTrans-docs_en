@@ -1,56 +1,56 @@
-工具
+Tools
 ==================================================
 
-ImageTrans还附带了一系列工具。
+ImageTrans also comes with a range of tools.
 
-屏幕阅读器
+Screen Reader
 ++++++++++++++++
 
-截取屏幕并OCR和翻译，所得的结果可以保存到项目中。支持检测剪贴板中的图片。OCR的结果会自动存入剪贴板。
+Make screen captures, OCR and translate. Results can be saved to the project. It can monitor new images copied into the clipboard. The OCR result will be automatically saved in the clipboard.
 
 .. image:: /images/screenreader.jpg
 
-语音朗读器
-++++++++++++++++
+TTS
+++++++++++++
 
-支持调用系统自带的TTS引擎朗读文本。
+It can call the operating system's built-in text-to-speech engines to read text.
 
 
-静默翻译器
+Silent Translator
 +++++++++++++++++
 
-可以以静默方式批量翻译图片，并支持终端调用。
+The pictures can be translated in batch silently. It can be used as in command line.
 
-终端调用方式：
+How:
 
 ``java -jar ImageTrans.jar configPath usePrevious detectOnly outdir fileListPath``
 
-参数说明：
+Parameters:
 
-configPath：运行参数文件路径，内容为静默翻译器右侧显示的参数
+configPath: the path of the parameter file. If you open Silent Translator you can see the parameters on the right side.
 
-usePrevious：是否使用之前的数据，可选值为true和false
+usePrevious: whether to use the previous data. The optional values are true and false
 
-detectOnly：是否仅检测文字区域，可选值为true和false
+detectOnly: whether to detect only text areas. The optional values are true and false
 
-outdir：输出文件夹
+outdir: output folder
 
-fileListPath：待处理文件的列表，用换行分隔
+filelistPath: a list of files to be processed, separated by newlines
 
-可以搭配\ `ImageTrans_Server <https://github.com/xulihang/ImageTrans_Server>`_\ 提供在线服务
-
-
-服务器
-+++++++++++++++++
-
-该工具可以允许其它软件调用ImageTrans翻译图片。
-
-`ImageTrans Chrome插件 <https://github.com/xulihang/ImageTrans_chrome_extension>`_\ 需要使用这一功能。
-
-该插件能用ImageTrans翻译网页中的图片，图片和处理结果会自动添加到ImageTrans当前的项目中。
+It can be used with `ImageTrans_Server <https://github.com/xulihang/ImageTrans_Server>`_ to provide an online service.
 
 
-目标检测标注数据管理器
-++++++++++++++++++++++++++++
+Server
++++++++++++++
 
-该工具可以将项目数据以YOLO的数据格式导出或者导回。支持OBB格式。
+This tool allows other software to call ImageTrans to translate images.
+
+`ImageTrans Chrome Extension <https://github.com/xulihang/ImageTrans_chrome_extension>`_ relies on this tool.
+
+The extension can use ImageTrans to translate images on webpages Images and processing results will be automatically added to the current project of ImageTrans.
+
+
+Object Detection Annotation Data Manager
+++++++++++++++++++++++++++++++++++++++++
+
+This tool can export or import project data in YOLO data format. Supports OBB format.

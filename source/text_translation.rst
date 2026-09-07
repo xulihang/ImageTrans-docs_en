@@ -1,22 +1,22 @@
-辅助文字翻译
+Translation Assist
 ==================================================
 
-ImageTrans提供常见的计算机辅助翻译软件的功能，包括翻译记忆、术语管理、机器翻译和语料检索，另外也针对漫画涉及了拟声词检索功能。
+ImageTrans supports common functions in computer-assisted translation software, including translation memory, terminology management, machine translation and concordancing. It also has a comics sound words search engine.
 
-这里具体介绍语料检索和拟声词检索功能。
+Here is a detailed introduction to the corpus and sound words search engine.
 
-语料检索
+Corpus
 ----------------
 
-建立新的语料需要用户制作翻译记忆文件进行上传，目前提供一个老友记十季字幕供学习使用。
+You need to store multilingual data in TMX format before uploading them to the system.  Currently, a corpus created from the subtitles of ten seasons of Friends is provided for learning purpose.
 
-详细介绍见此：`翻译记忆在线检索器 <http://blog.xulihang.me/online-translation-memory-search/>`_
+See here for more details: `Online Translation Memory Search <http://blog.xulihang.me/online-translation-memory-search/>`_
 
 
-拟声词检索
+Sound Words
 --------------------
 
-建立新的拟声词词典需要用户上传一个Excel表格文件，包含词条名、分好的词、声音属性以及具体释义。目前提供新牛津英汉汉英双解词典的拟声词条目供学习使用。
+You need to create your own sound words dictionary and store it in a XLSX file, with entry names, segmented words (for Chinese), sound attributes, and explanations before uploading it to the system. The sound word entries of the New Oxford English-Chinese Chinese-English Dictionary are currently available for learning purposes.
 
-详细介绍见此：`漫画翻译之拟声词 <http://blog.xulihang.me/comics-translation-sound-effects-words/>`_
+See here for more details: `Comics Translation - Sound Words <http://blog.xulihang.me/comics-translation-sound-effects-words/>`_
 

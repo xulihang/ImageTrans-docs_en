@@ -1,40 +1,40 @@
-日漫OCR
+Manga OCR
 ============
 
-日语漫画的文字从右向左竖向排列，并且会带有用于注音的振假名，所以处理方式会有不同。
+The text of Japanese manga is arranged vertically from right to left, and there will be Furigana for phonetic notation, so the processing methods will be different.
 
-以下是ImageTrans中针对日漫OCR的相关功能设计。
+The following is the related features of ImageTrans for manga OCR.
 
-1. 去除振假名
+1. Strip Furigana
 
-勾选OCR工具栏的去除振假名，OCR时会把图像中的振假名去除。
+Check Strip Furigana on the OCR toolbar to remove Furigana in the image during OCR.
 
-原图：
+Original image:
 
 .. image:: /images/manga/image.jpg
 
-去除后的图：
+After:
 
 .. image:: /images/manga/no_furigana.jpg
 
-2. 竖排转横排
+2. Vertical to Horizontal
 
-勾选OCR工具栏的转换图片为横排，OCR时会以横排的方式重新排列文字。这样许多仅能识别横排日语的OCR引擎就也能用了。但该方法只适用于背景单一的图像。
+Check Vertical to Horizontal in the OCR toolbar so that the text will be rearranged in during OCR. In this way, many OCR engines that can only recognize horizontal Japanese can also be used. However, this method only applies to images with a simple background.
 
-原图：
+Original image:
 
 .. image:: /images/manga/vertical.jpg
 
-转换后的图：
+After:
 
 .. image:: /images/manga/horizontal.jpg
 
-3. 启发式文字检测方法的参数设置
+3. Parameter Setting of The Heuristic Text Detection Method
 
-默认的启发式文字检测方法先横向合并，再纵向合并。OCR日漫时，可以设置为先纵向合并后横向合并，并调整纵向合并时文字行的重叠比例以避免不同段落文字被合并的问题。
+The default heuristic text detection method merges horizontally and then vertically. For manga, it can be set to merge vertically and then horizontally. The overlapping ratio of text lines can also be adjusted to avoid the problem of merging different paragraphs.
 
-4. 从右向左阅读顺序
+4. Right to Left Reading Order
 
-在项目设置中勾选此选项，合并文字区域时，会把右边的文字放在前面。
+Check this option in project settings so that when merging text areas, the text on the right will be placed in the front.
 
-注：如果OCR能直接识别竖排日语，可以不进行竖排转横排这样的操作。
+Note: If the OCR engine can directly recognize vertical Japanese, you don't have to perform Vertical to Horizontal conversions.

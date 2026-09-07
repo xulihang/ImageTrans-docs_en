@@ -1,9 +1,9 @@
-ImageTrans使用手册
+ImageTrans Documentation
 ==================================================
 
 .. toctree::
    :maxdepth: 2
-   :caption: 目录
+   :caption: Contents
 
    intro.rst
    gettingstarted.rst

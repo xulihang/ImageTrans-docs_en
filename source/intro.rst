@@ -1,18 +1,18 @@
-简介
+Introduction
 ============
 
-ImageTrans是一款图片文字转录、图片翻译软件。ImageTrans不同于谷歌的图片自动翻译，它提供人工精调功能，是一款以人为本的辅助工具。
+ImageTrans is an image transcription and translation tool. Unlike Google's automatic image translation, it allows users to finely control the translation process.
 
-功能：
+Features:
 
-* 自动或者辅助用户框选文字区域，调用多种OCR引擎进行文字识别
-* 对文字区域排序，并将文字导出为xlsx、docx等多种格式文件
-* 调用机器翻译对识别的文字做预翻译
-* 调用Photoshop读取PSD文件、导出可编辑的译文PSD文件
-* 设置字体样式
-* 针对漫画翻译设计的文字区域检测和文字抹除功能
+* Text areas detection (automatic and manual). Supports multiple OCR engines.
+* Sort text areas and export the text as xlsx, docx, and other format files
+* Use machine translation to pre-translate source text
+* Call Photoshop to read PSD files and generate editable translated PSD files
+* Text Styling
+* Text area detection and text erasing designed for comic translation
 
-除了本文档，你也可以通过\ `官方网站 <https://www.basiccat.org/zh/imagetrans/>`_\ 了解更多软件的内容。
+In addition to this document, you can also learn more about the software through the `official website <https://www.basiccat.org/imagetrans/>`_.
 
 
 

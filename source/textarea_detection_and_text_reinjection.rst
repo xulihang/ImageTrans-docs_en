@@ -1,94 +1,94 @@
-文字区域检测和译文回填
+Text Area Detection and Translation Reinjection
 ==================================================
 
-ImageTrans实现了一套文字区域检测和译文回填方法。
+ImageTrans implements a set of text area detection and translation reinjection methods.
 
 .. _text-detection:
 
-文字区域检测
-----------------
+Text Area Detection
+-------------------
 
-ImageTrans支持四种文字检测方式：OCR提供的检测功能、基于深度学习目标检测的气泡检测功能、基于规则的启发式检测方法和自然场景文字检测方法。更多可以看这篇博客：\ `为图片翻译选择合适的文字检测方法 <https://www.basiccat.org/zh/choose-a-suitable-text-detection-method-for-image-translation/>`_。
+ImageTrans supports four text detection methods: text detection provided by OCR, balloons (bubbles) detection using deep learning object detection, rule-based heuristic detection method and natural scene text detection method. For more information, please refer to this blog post: `Choose a Suitable Text Detection Method for Image Translation <https://www.basiccat.org/choose-a-suitable-text-detection-method-for-image-translation/>`_.
 
-这里主要介绍启发式和自然场景文字检测方法。
+Here, we mainly explain the heuristic and natural scene text detection methods.
 
-启发式
-++++++++++++++++
+Heuristic
++++++++++++++++
 
-启发式方法能够较为精确地生成文字区域，并提供详细的参数设置，可以针对不同漫画调整以取得期望的结果。
+The heuristic method can generate text areas more accurately and provide detailed parameter settings, which can be adjusted for different comics to achieve better results.
 
-操作方法：
+Operation:
 
-1. 点击编辑-自动定位文字（启发式），将获得所有候选文字区域
-2. 点击编辑-文字区域操作-获取文字区域置信度，文字区域可能性较低的区域的文本框颜色将变为黄色。这类区域可以自行去除或者隐藏，但因为有些区域被误识别为非文字区域，去除的话翻译时还要手动框选，建议不要直接去除。
-3. 选择文字区域进行OCR和翻译，操作结束后，可以点击编辑-文字区域操作去除没有原文或者没有译文的区域。
+1. Click Edit->Detect text areas (heuristic) to get all the candidate text areas
+2. Click Edit->Text area operation->Get text area confidence. The box color of areas which are unlike text areas will turn to yellow. This kind of area can be removed or hidden. But because some areas are mistakenly identified as non-text areas, it is not recommended to remove them directly.
+3. Select the text area to perform OCR and translation. After that, you can remove areas without source text or target text through Edit->Text area operations.
 
 .. image:: /images/textareas.jpg
 
-OCR等操作会自动略过文字区域可能性较低的区域。
+Operations such as OCR will automatically skip low-confidence areas.
 
-因为不同的漫画尺寸不同，需要设置不同的文字区域检测参数，可以在项目-设置-文字区域检测里进行设置。
+Because different comics have varous sizes, different text area detection parameters need to be set, which can be done through Project->Settings->Text Area Detection
 
-文字区域检测的算法细节见此：`基于规则的漫画文字检测方法 <http://blog.xulihang.me/text-localization-for-comics/>`_。
+The algorithm details of text area detection can be found here: `Rules-based comic text detection method <http://blog.xulihang.me/text-localization-for-comics/>`_.
 
-文字区域置信度获取是利用TensorFlow提供的脚本基于卷积神经网络预训练模型重新训练的，相关代码见此：`<https://github.com/xulihang/text-image-classifier>`_。
+The confidence of text areas is obtained using a CNN model retrained using TensorFlow's script. See the code here: `<https://github.com/xulihang/text-image-classifier>`_.
 
-文字区域检测的操作本工具提供手动分步操作功能，操作方式是菜单栏-编辑-文字区域操作以及右侧编辑区的合并上下区域和合并左右区域按钮。
+The opreations for text area detection can be done manually in steps via Edit-Text area operations and the merge buttons in the right editing area.
 
-自然场景文字检测
-++++++++++++++++++++++++++
+Natural Scene Text Detection
+++++++++++++++++++++++++++++++
 
-自然场景文字检测功能允许用户调用DB、EAST、CRAFT等开源自然场景文字检测方法，这类方法的准确率较高，并能检测倾斜文本，但一般需要花费较长的运行时间。
+The natural scene text detection allows users to call open source natural scene text detection methods such as DB, EAST and CRAFT, which have high accuracy and can detect tilted text. But it generally take a long time to produce the result.
 
 
-译文回填
---------------------
+Translation Reinjection
+-----------------------
 
-译文回填分为两步：原文抹除和译文的放置。
+Translation reinjection consists of two steps: source text removal and replacement of target text.
 
-原文抹除
-++++++++++++
+Source Text Removal
++++++++++++++++++++
 
-原文抹除有两种模式，一种是精确模式，一种是非精确模式。
+There are two modes of text removal One is the precision mode and the other is the imprecision mode.
 
-精确模式下，会先生成文字掩膜，再根据掩膜进行背景还原。背景还原方式有两种，一种是使用图像修复方法，一种是用背景颜色生成文字掩膜以覆盖文字。如果掩膜生成不正确，可以使用编辑-生成/编辑掩膜进行修改，掩膜图像会保存在图片目录，带有mask后缀，而去除文字的图像则带有text-removed后缀。
+In precision mode, text mask will be generated first, and then restore the background according to the mask. There are two ways to restore the background: one is to use the image inpainting method, and the other is to use the background color to generate a text mask to cover the text. If the mask is generated incorrectly, it can be modified through Edit->Generate/Edit mask. The mask image will be saved in the picture folder with a mask suffix, while the text-removed image has a text-removed suffix.
 
-注意：
+Note:
 
-1. 如果掩膜没有手动生成，每次查看翻译版本时会自动生成，会耗费时间进行计算。
-2. 浅色字体区域需要先设置背景颜色和文字颜色或者勾选项目设置里的相关选项，这样程序会判断文字颜色是不是比背景颜色浅，如果较浅，则会对图像做颜色反转，文字掩膜才能够正确生成。
+1. If the mask is not generated manually, mask and text-removed images are automatically generated every time you switch to the translated version. The generation will takes time.
+2. For areas with light font color, you need to set the background color and text color first or enable relevant project settings so that the program will reverse the image color to generate mask correctly.
 
-非精确模式下，则会使用背景颜色生成一个文本框进行遮盖，如果该文本框尚没有设置原文和译文，颜色会变成半透明。这一模式较适合背景单一的数字图像。
+In imprecision mode, a rectangular box will be generated with a colored background to cover text. If the box has no source text nor target text, it will be transparent. This mode is more suitable for digital images with a simple background.
 
-下图是掩膜编辑器和去除文字器，能用于调整掩膜和文字去除结果：
+The following image shows the Mask Editor and the Text Remover, which can be used to adjust the mask and text removal results:
 
 .. image:: /images/mask_editor_and_text_remover.jpg
 
-掩膜生成和图像修复支持调用插件以使用第三方的方法，现有的插件是\ `Sickzil-machine <https://github.com/xulihang/ImageTrans_plugins>`_\ 和\ `Lama <https://github.com/xulihang/ImageTrans_plugins/tree/master/LamaInpaint>`_。
+There is plug-in support for mask generation and image inpainting to use third-party methods. The existing plug-ins are `Sickzil-machine  <https://github.com/xulihang/ImageTrans_plugins>`_ and `Lama <https://github.com/xulihang/ImageTrans_plugins/tree/master/LamaInpaint>`_.
 
 
-其它情况：
+Other cases:
 
-如果存在无文字原图，可以通过\ `无文字原图和纯文字图管理器 <https://github.com/xulihang/ImageTrans-docs/issues/199#issuecomment-1133639931>`_\ 设置无文字原图，查看翻译时会直接使用原图。
-
-
-更多可以看这篇博客：\ `ImageTrans图片文字抹除详解 <https://www.basiccat.org/zh/details-about-image-text-removal-using-imagetrans/>`_。
-
-译文放置
-+++++++++++++
-
-根据文本框的大小和位置放置译文，支持自动根据文本框的大小调整译文大小，可以在项目设置里进行设置。
+If a text-free original image exists, that text-free original image can be set through the `Textless Original Image and Pure-Text Image Manager <https://github.com/xulihang/ImageTrans-docs/issues/199#issuecomment-1133639931>`_. The original image will be directly used when viewing the translated image.
 
 
-颜色检测
-++++++++++++++
+For more information, please refer to this blog post: `Details about Image Text Removal using ImageTrans <https://www.basiccat.org/details-about-image-text-removal-using-imagetrans/>`_.
 
-本工具能较粗略地自动检测背景颜色和文字颜色，点击编辑-颜色操作进行相关操作。
+Translation Replacement
++++++++++++++++++++++++
 
-旋转检测
-++++++++++++++
+You can adjust the location and size of the target text boxes. The font size will be automatically adjusted. You can set this in the project settings.
 
-本工具支持检测旋转的文字的角度，可以通过编辑-文字区域操作菜单或者自定义工作流进行操作。
+
+Color Detection
++++++++++++++++
+
+This tool can automatically detect the background color and text color roughly. Click Edit->Color operations to do the detection.
+
+Rotation Detection
+++++++++++++++++++
+
+This tool supports detecting the angle of rotated text, which can be operated through the Edit->Text Area Operation menu or custom workflow.
 
 
 

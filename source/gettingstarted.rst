@@ -1,314 +1,314 @@
-快速入门
+Getting Started
 ==================================================
 
-软件安装
------------
+Installation
+------------
 
-完整版
-++++++++++++
+Full Version
++++++++++++++++
 
-Windows完整版解压到任意目录后运行ImageTrans.exe即可，Mac完整版打开dmg文件安装ImageTrans到应用目录即可。
+For Windows, unzip the full version to any folder and run ImageTrans.exe. For Mac, drag the app in the dmg file to Application.
 
-跨平台版
-++++++++++++
+Cross Platform Version
+++++++++++++++++++++++++++
 
-下载zip压缩包，解压到任意目录，双击ImageTrans.jar或者命令行输入\ ``java -jar ImageTrans.jar``\ 即可运行。
+Download ImageTrans's zip file, unzip it to any folder, double-click ImageTrans.jar or enter the command line ``java -jar ImageTrans.jar`` to run it.
 
-软件依赖JRE 11以上运行环境，请先下载安装。下载地址：\ `Liberica JRE 11.0.19 full version  <https://github.com/bell-sw/Liberica/releases/tag/11.0.19%2B7>`_
+The software depends on JRE 11+. Please download and install it first. Download link: `Liberica JRE 11.0.19 full version <https://github.com/bell-sw/Liberica/releases/tag/11.0.19%2B7>`_
 
-软件依赖OpenCV，请根据系统下载运行库文件，解压后放在ImageTrans的目录下。下载地址：\ `GitHub <https://github.com/xulihang/ImageTrans-docs/releases/tag/opencv>`_
+ImageTrans also relies on OpenCV, please download the runtime file according to your system, unzip and put it under ImageTrans's folder. Download link: `GitHub <https://github.com/xulihang/ImageTrans-docs/releases/tag/opencv>`_
 
-OCR与机器翻译的配置
-++++++++++++++++++++++++
+Configuration of OCR and Machine Translation
+++++++++++++++++++++++++++++++++++++++++++++++
 
-本工具集成了常见的在线OCR和机器翻译服务。一般这些服务均需要设置API密钥才能使用。ImageTrans内置了部分服务的API密钥，可以直接使用：
+ImageTrans has integrated common online OCR and machine translation APIs. Usually, you need to apply for their API keys to call them. ImageTrans has included the API keys of some services, which can be used directly:
 
-OCR： 百度、OCRSPACE、Azure
+OCR: Baidu, OCRSPACE, Azure
 
-机器翻译： 百度、腾讯、云译、mymemory、DeepL免密钥版
+Machine translation: Baidu, Tencent, Cloudtranslation, mymemory, DeepL KeyFree
 
-另外也支持若干离线OCR和机器翻译。
+In addition, some offline OCR and machine translation are also supported.
 
-离线OCR:
+Offline OCR:
 
 1. Tesseract
 
-   需要使用Tesseract进行OCR的话请自行下载安装（`地址 <https://tesseract-ocr.github.io/tessdoc/Downloads.html>`_），并在ImageTrans里指定Tesseract的路径。
+   If you need to use Tesseract for OCR, please install it by yourself (`Link <https://tesseract-ocr.github.io/tessdoc/Downloads.html>`_) and specify the path of Tesseract in ImageTrans.
 
-   这里再提供一个Windows的安装版本：\ `UB-Mannheim Tesseract5 <https://github.com/UB-Mannheim/tesseract/releases/download/v5.4.0.20240606/tesseract-ocr-w64-setup-5.4.0.20240606.exe>`_。
+   Here is an installer version for Windows: `UB-Mannheim Tesseract5 <https://github.com/UB-Mannheim/tesseract/releases/download/v5.4.0.20240606/tesseract-ocr-w64-setup-5.4.0.20240606.exe>`_.
 
-2. Windows10自带OCR
+2. The built-in OCR in Windows 10
 
-   Windows10自带OCR功能，但需要先安装所需语言。它和Azure、OCRSPACE的引擎其实是同一个。ImageTrans中这一OCR引擎的名字叫做WinRT，因为它是基于Windows的\ `Windows Runtime API <https://docs.microsoft.com/en-us/uwp/api/windows.media.ocr?view=winrt-20348>`_。
+   Windows 10 comes with built-in OCR, but you need to install the language environment first. Actually, it has the same engine as Azure and OCRSPACE. This OCR engine in ImageTrans is called WinRT because it is based on the `Windows Runtime API <https://docs.microsoft.com/en-us/uwp/api/windows.media.ocr?view=winrt-20348>`_.
 
 3. mangaOCR
 
-   该OCR能十分准确地识别日漫的文字。安装说明见此：\ `<https://github.com/xulihang/ImageTrans_plugins/tree/master/mangaOCR>`_。
+   This OCR can accurately recognize the text of manga. Installation instructions: `<https://github.com/xulihang/ImageTrans_plugins/tree/master/mangaOCR>`_.
 
 4. macOCR
 
-   macOS版本10.15以上系统自带的OCR。使用说明见此：\ `<https://github.com/xulihang/ImageTrans-docs/issues/341>`_。
+   The system's built-in OCR on macOS 10.15+. Details: `<https://github.com/xulihang/ImageTrans-docs/issues/341>`_.
 
 5. ABBYY
 
-   支持调用ABBYY FineReader进行OCR，需要在偏好设置里指定软件的FineCMD.exe的路径。
+   It supports calling ABBYY Finereader for OCR. You need to specify the path of FineCMD.exe in the Preferences.
 
-6. PaddleOCR、EasyOCR
+6. PaddleOCR, EasyOCR
 
-   需要自行安装Python和上述软件，并用提供的server脚本运行，例如\ `PaddleOCR的Server <https://github.com/xulihang/ImageTrans_plugins/tree/master/paddleOCR/server>`_。
+   You need to install Python and the above software and run them with the server scripts provided, like `the server of PaddleOCR <https://github.com/xulihang/ImageTrans_plugins/tree/master/paddleOCR/server>`_.
 
-离线机器翻译：
+Offline machine translation:
 
-1. OPUS-CAT。OPUS-CAT是芬兰赫尔辛基自然语言处理小组的离线机器翻译引擎，到\ `官网 <https://helsinki-nlp.github.io/OPUS-CAT/install>`_\ 下载安装后使用\ `OPUS-CAT机器翻译插件 <https://github.com/xulihang/ImageTrans-docs/issues/177#issuecomment-1070305647>`_\ 调用。
-2. eztrans xp。这是一个日韩翻译软件。使用方法见\ `issue29 <https://github.com/xulihang/ImageTrans-docs/issues/29#issuecomment-818754544>`_。
+1. OPUS-CAT. Opus-CAT is the offline machine translation engine by the Helsinki Natural Language Processing Group. Download and install it from `here <https://helsinki-nlp.github.io/OPUS-CAT/install>`_ and install the OPUS-CAT machine translation `plug-in <https://github.com/xulihang/ImageTrans-docs/issues/177#issuecomment-1070305647>`_ to use it.
+2. eztrans xp. This is a Japanese-Korean translation software. Check out `issue29  <https://github.com/xulihang/ImageTrans-docs/issues/29#issuecomment-818754544>`_ for its usage.
 
 
-验证登录
+Verification
 ------------
 
-运行ImageTrans时，会显示验证器，需要填入购买时填写的email和订单号。订单号可以在订单页面中找到。
+When you start ImageTrans, a validator will show up. You need to verify with your email and order number.  The order number can be found on the purchase page.
 
 .. image:: /images/validator.jpg
 
-一个email可以在三台设备上使用，要更换设备则需要使用邮箱进行重置。
+Each email can be used for verification on at most three devices. If you want to use it on the fourth device, you have to reset it with your email.
 
 .. image:: /images/reset_macs.jpg
 
 
-新建项目
+New project
 -----------
 
-菜单栏点击文件-新建项目，选择一个位置并输入项目文件名以保存。
+Click File->New, select a place and enter the project name to save the project file.
 
 .. image:: /images/new_project.png
 
 
-添加图片
-++++++++++
+Import Pictures
++++++++++++++++
 
-菜单栏点击文件-导入图片文件夹，选择图片存在的位置。该操作会读取该文件夹下所有的子目录并导入存在的jpg、png文件。
+Click File->Import pictures (from a folder) and select in which folder the picture exists to import. It will read all the subfolders and import existing jpg and png files.
 
 .. image:: /images/import_images.png
 
-或者用右键菜单-粘贴图片的方式添加单张图片。
+You can also use the context menu to paste an image.
 
-此外亦能导入PDF文件，并提取可复制的文字。
+It can also import PDF files and extract selectable text.
 
-文字转录
------------
+Transcription
+-------------
 
-工具支持框选文字区域并识别。提供手动框选和四种自动框选，并支持精细调整文本框。
+You can mark text areas in boxes and get their text. The tool supports manual selection and four automatic selection methods. Further adjustment is also supported.
 
-手动框选文字
-+++++++++++++++++++
+Create Text Area Boxes Manually
++++++++++++++++++++++++++++++++++
 
-在图片上双击建立选择框，点住中间区域进行移动，点住右下角调整大小。
+Double-click on the picture to create a selection box. Press on the middle area to move the box and press on the lower right corner to resize.
 
 .. image:: /images/selectionbox.gif
 
-或者点击左侧工具栏的快速框选按钮，可以直接滑动建框。
+There is also a quick creation mode. Click the button on the left and you can press and drag your mouse cursor to create boxes quickly.
 
 .. image:: /images/selectionbox_quickcreatin.gif
 
 OCR
-+++++++++++++++++++
++++++++
 
-选中文字区域，选择语言和OCR引擎，点击识别进行OCR。
+Select the text area, select the right language, choose an OCR engine and press OCR.
 
 .. image:: /images/OCR.gif
 
-自动识别文字
-++++++++++++++++++++++++++
+Detect Text Areas and Recognize Text
+++++++++++++++++++++++++++++++++++++++
 
-选择语言和OCR引擎，点击菜单-编辑-自动识别文字，可以自动检测文字区域并转录。其中有道和谷歌是按段落识别，其它引擎是按行识别，可以通过右侧编辑区域的合并左右区域和合并上下区域进行合并。
+Select the language and an OCR engine, click Edit->Detect text areas and recognize text. Youdou and Google detect in paragraph level and other engines detect text lines.
 
 .. image:: /images/automatic_text_recognition.gif
 
-自动识别气泡
-++++++++++++++++++++++++++
+Detect Balloons
+++++++++++++++++
 
-点击菜单-编辑-自动识别气泡，可以自动识别气泡。默认使用百度的在线气泡检测服务，可以自行配置离线气泡检测，详见\ :ref:`balloon-detection`。
+Click Edit->Detect Balloons to detect all the balloons (or bubbles). By default, Baidu's online balloon detection service is used. You can also use offline balloon detection. See :ref:`balloon-detection` for details.
 
 .. image:: /images/balloon_detection.gif
 
-另提供较为复杂的启发式和自然场景文字检测方法，详见\ :ref:`text-detection`。
+Heuristic and natural scene text detection methods are also provided, which are more complex. See :ref:`text-detection`.
 
-自动OCR所有区域
-++++++++++++++++++++++++++
+OCR All Text Areas
+++++++++++++++++++++
 
-我们可以先把文字区域框出，然后批量进行OCR。点击菜单-编辑-自动OCR所有区域进行操作。
+We can mark out text areas first and then OCR them in bulk. Click Edit->OCR All Text Areas to do this.
 
-排序
-++++++++
+Sort
+++++++
 
-支持根据坐标信息对文字区域进行排序。
+Sort text areas based on coordinates.
 
 .. image:: /images/sort.gif
 
-另外针对漫画，提供分镜检测功能，可以在分镜的基础上进行排序，详见\ `issue147 <https://github.com/xulihang/ImageTrans-docs/issues/147>`_。
+There is also a sort-by-panel feature designed for comics. Check out `issue147 <https://github.com/xulihang/ImageTrans-docs/issues/147>`_ for details.
 
-导出
-+++++++++++++
+Export
+++++++++
 
-导出有多种选项。
+There are several options for exporting.
 
 .. image:: /images/export.png
 
-* Tab分割的TXT文档，包含坐标信息、字体样式、文字等信息
-* XLSX表格，和TXT的内容一样
-* XLSX表格-根据目录建立工作表，按子目录保存图片名、原文和译文信息
-* 所有文本，按每张图片生成包含图片文字的txt文档
-* 供翻译的文档，将原文和译文信息以表格的形式导出为一个docx、txt或者XLIFF文件
-* 网页，将项目导出为网页，可供局域网内的手机阅读，支持语音朗读和按分镜阅读
-* 图像PDF，将项目导出为PDF，支持添加可搜索的文字层
-* TMX，导出原文译文为翻译记忆文件
-* 分镜，导出分镜图像为单张图片、条漫或者PDF
+* Tab-splitted TXT documents include coordinate, font style and text.
+* The XLSX file has the same content as TXT's.
+* XLSX file - create worksheets based on folders. It will store picture names, source texts, and target text in separate sheets.
+* All text. Store text in separate txt files for each picture.
+* Document for translation. Export source text and target text to a docx, txt or XLIFF file.
+* Webpage. Export the project as a web page for reading on mobile phones in a local network. It supports text-to-speech and reading by panels.
+* Raster PDF. Export the project as PDF. Searchable text layers can be added.
+* TMX. Export the source text and the target text as a translation memory file.
+* Panel. Export panels as single image files, webtoon files, or PDF files
 
-翻译
+Translation
 -----------
 
-在译文区域输入译文并点击保存可以完成一个文字区域的翻译。
+Enter the target text in the translation area and click Save to complete the translation of a text area.
 
-可以将翻译导出为docx、txt或者XLIFF文档供外部人员翻译，之后再通过菜单-导回翻译进行导回。
+Translations can be exported as docx , txt or XLIFF documents for external translation, and then imported back through File->Import translation.
 
 .. image:: /images/reimport.png
 
-计算机辅助翻译软件BasicCAT支持直接操作ImageTrans的项目文件进行翻译。
+BasicCAT, a computer-aided translation software, supports direct operation of ImageTrans's project files for translation.
 
-翻译记忆、机器翻译和术语管理
-+++++++++++++++++++++++++++++++++
+Translation memory, machine translation and terminology management
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-切换右侧的操作区到辅助翻译页面，可以使用翻译记忆、机器翻译和术语管理这三个功能。机器翻译需要在偏好设置里设置API，并进行启用。另外还需要设置项目的语言，通过项目-设置-选择语言对进行设置。
+Switch the tab page on the right to the translation assistant page to use translation memory, machine translation, and terminology management. You need to set up APIs and enable them to use machine translation. You also need to set the language pair of the project, which can be done through Project->Settings->Select language pair.
 
 .. image:: /images/CAT.jpg
 
-预翻译
-++++++++++++
+Pre-translation
++++++++++++++++
 
-点击菜单-项目-批处理-预翻译，可以使用翻译记忆或者机器翻译进行批量翻译。
+Click Project->Batch->Pre-translation to use translation memory or machine translation to pre-translate.
 
 .. image:: /images/pretranslate.png
 
 
-查看翻译
-+++++++++++
+Check Translated
+++++++++++++++++
 
-勾选左下角的查看翻译，可以查看翻译后的图片。精确模式会生成文字掩膜并修复背景，非精确模式则会用背景颜色进行遮盖。
+Check Translated in the lower-left corner to see the translated image. The precision mode will detect text and reconstruct the background. The imprecision mode will just cover the area with the background color.
 
 .. image:: /images/Preview.gif
 
-在查看翻译状态下勾选排版模式，译文区域将被框出，并支持调整位置和修改样式。
+When Typesetting mode is checked with Translated checked, target text areas will be boxed out. You can readjust their size and location.
 
 .. image:: /images/design_mode.jpg
 
 
-生成成品图
---------------
+Generate the Translated Picture
+-------------------------------
 
-点击文件-导出当前图片为-JPG，结果将输出在对应图片的文件夹的out文件夹中。选项ORA支持将文件导出为多层图像格式ORA，该格式能保存图层信息，供PS、Gimp和Krita等图像编辑软件编辑。
+Click File->Export the current picture to->JPG, and the result will be exported to the out folder in the picture folder. Another option, ORA, supports exporting files to multi-layer image format ORA, which holds layer information for image editing software such as PS, GIMP, and Krita.
 
-除此以外，ImageTrans可支持导出PSD。
+In addition, ImageTrans supports exporting as PSDs.
 
-如果要生成全部图片的成品图，需要通过项目-批处理-导出所有图片的成品图进行操作。
+If you want to generate translated images for all, you need to use this menu item: Project->Batch->Generate translated images for all.
 
-设置文字样式
+Style Text
 ------------------
 
-设置文字样式主要有两个作用，一个是在ImageTrans中使用，一个是用于导出PSD时设置字体。
+Setting text styles has effects in two processes: see the translated result in ImageTrans and export as PSDs.
 
 
-点击菜单-项目-设置-字体样式可以设置全局样式，设置选项包括使用的字体、文字大小、文字方向、行距、对齐方式、旋转角度、描边等等。
+Click Project->Settings->Font Style to set the font name, font size, direction, leading, alignment, rotation, stroke and so on.
 
 .. image:: /images/fontstyles.jpg
 
-排在第一的样式是默认样式。在样式上方右键可以执行排序和删除操作，在列表的空白处右键可以选择从其它项目导入样式。
+The first style will be the default style. You can right-click above the style to sort and delete it, and right-click in the blank space of the list to import styles from another project.
 
-设置全局样式后可以给文字区域指定使用哪个样式。
+After setting the global style, you can specify which style to use for the text area.
 
 .. image:: /images/set_fontstyle.png
 
-另外也支持设置本地样式。本地样式的优先级大于全局样式。
+You can also set up local styles. The local style has a higher priority than the global style.
 
-点击左侧的字体按钮以启用字体设置工具栏，可以便捷地设置本地样式。
+Click the Font button on the left to enable the font settings toolbar, which makes it easy to set local styles.
 
 .. image:: /images/fontstyle_bar.jpg
 
-也可以通过文字区域列表上方的字体设置进行设置。它有一个专门的界面，能设置描边、旋转、是否启用本地样式。它能调出全局字体样式的设置界面进行更详细的设置（会读取添加在末尾的样式为本地字体样式）。
+It can also be set through the font setting button above the text area list. It has a dedicated interface where you can set stroke, rotation, and whether to enable the local style. It can bring up the global font style setup interface for a more detailed setup (reads the style added at the end as local font style).
 
 .. image:: /images/localstyle.jpg
 
 
-点击左侧的多选按钮以启动多选工具栏，可以调整多个文本框的位置并统一其字体样式。
+Click the Selection button on the left to enable the multi-selection toolbar. You can adjust the position of multiple text boxes and unify their font styles.
 
 .. image:: /images/selection_bar.jpg
 
 
-获取Photoshop用字体名
-++++++++++++++++++++++++++++++++++++++++
+Get the font name for Photoshop
++++++++++++++++++++++++++++++++++++++++++
 
-因为Photoshop需要的字体名比较特殊，需要从PS中获得。方法是在PS中新建一张图片，建立一个文本框，设置所需字体，并完成文字编辑操作，是文本框处于非编辑状态。之后在ImageTrans中点击读取即可。非Windows系统需要使用readFont.jsx脚本。
+Because Photoshop requires a special font name, it needs to be obtained from PS. The way is to create a new picture in PS, create a text box, set the font you want, and complete the text editing operation, letting the text box in non-editing status. Then click Read in ImageTrans. Non-Windows systems have to use readFont.jsx scripts.
 
 .. image:: /images/readPSfont.jpg
 
 
-自动调整字体大小
-+++++++++++++++++++++++++++++++++++++++
+Auto font resize
++++++++++++++++++++++
 
-软件默认能根据文字区域大小自动调整字体大小。可以在项目设置中设置是否启用该功能以及最大、最小字体大小。
+By default, the software can automatically adjust the font size according to the size of the text area. You can set whether to enable this feature and the maximum and minimum font sizes in the project settings.
 
-字体大小的优先级是这样的：
+The font size priority is as follows:
 
-本地样式中的字体大小>自动调整字体大小>全局样式中的字体大小。
+Font size in local style > Auto font size > Font size in global style.
 
-富文本
-++++++++++++++++++
+RichText
+++++++++++++++
 
-ImageTrans可以使用BBCode来标记富文本格式，比如下图中运用的粗体和斜体。
+ImageTrans can use BBCode to mark rich text formats, such as the bold and italic effects used in the following image.
 
 .. image:: /images/richtext_example.jpg
 
-是使用这样的标记文本表示的： ``留[b][fi]性感[/fi][/b]的绿发，穿绿皮衣的那个人。`` 。
+It is represented using the following text with BBCode: ``留[b][fi]性感[/fi][/b]的绿发，穿绿皮衣的那个人。`` .
 
-下面是支持的标记说明：
+Below is a table of supported tags:
 
 .. csv-table::
-   :header: "标签名", "效果", "用例"
+   :header: "Tag name", "Effects", "Example"
    :widths: 10, 10, 30
 
-   "b", "粗体（需要字体本身支持粗体）", "[b]文本[/b]"
-   "i", "斜体（需要字体本身支持斜体）", "[i]文本[/i]"
-   "fb", "仿粗体（仅用于横排）", "[fb]文本[/fb]"
-   "fi", "仿斜体（仅用于横排）", "[fi]文本[/fi] 或者 [fi=2,2,2]文本[/fi] 2,2,2分别代表倾斜程度、纵坐标偏移量和高度偏移量"
-   "u", "下划线（仅用于横排）", "[u]文本[/u]"
-   "s", "删除线（仅用于横排）", "[s]文本[/s]"
-   "h", "竖排内横排（仅用于竖排）", "[h]文本[/h]"
-   "offsetx", "横向偏移量（仅用于竖排）", "[offsetx=5]文本[/offsetx]"
-   "offsety", "纵向偏移量（仅用于竖排）", "[offsety=5]文本[/offsety]"
-   "fontfamily", "字体名", "[fontname=Arial]文本[/fontname]"
-   "fontsize", "文字大小", "[fontsize=32]文本[/fontsize]"
-   "fontcolor", "文字颜色", "[fontcolor=#FF0000]文本[/fontcolor]"
+   "b", "Bold (requires the font itself to support bold)", "[b]text[/b]"
+   "i", "Italic (requires the font itself to support italics)", "[i]text[/i]"
+   "fb", "Faux bold (only for horizontal text)", "[fb]text[/fb]"
+   "fi", "Faux italic (only for horizontal text)", "[fi]text[/fi] or [fi=2,2,2]text[/fi] The three values respectively represent the degree of inclination, vertical offset, and height offset"
+   "u", "Underline (only for horizontal text)", "[u]text[/u]"
+   "s", "Strikethrough (only for horizontal text)", "[s]text[/s]"
+   "h", "Horizontal within vertical (only for vertical text)", "[h]text[/h]"
+   "offsetx", "Horizontal offset (only for vertical text)", "[offsetx=5]text[/offsetx]"
+   "offsety", "Vertical offset (only for vertical text)", "[offsety=5]text[/offsety]"
+   "fontfamily", "Font family", "[fontname=Arial]text[/fontname]"
+   "fontsize", "Font size", "[fontsize=32]text[/fontsize]"
+   "fontcolor", "Font color", "[fontcolor=#FF0000]text[/fontcolor]"
 
-点编辑区域右侧的按钮R可以启用富文本编辑器，便于快速插入对应的BBCode代码。
+You can tap the button R to the right of the editing area to enable the rich text editor for quick insertion of the corresponding BBCode.
 
 .. image:: /images/richtext_editor.jpg
 
-批处理
+Batch
 --------------
 
-以上对单个图片的操作都可以通过菜单-项目-批处理对所有图片进行操作。可以通过自定义工作流功能一次性对所有图片执行所需的操作。
+All of the above operations on a single picture can be performed in batch through Project->Batch. You can perform selected operations on all images at once through the custom workflow function.
 
-工具栏
+Toolbar
 -----------------------
 
-点击程序左侧工具栏按钮，可以切换不同的工具栏。
+Click the toolbar buttons on the left side of the program to switch between different toolbars.
 
-目前支持以下工具栏：
+Currently, the following toolbars are supported:
 
-1. OCR。
-2. 多选。支持选中多个区域并进行对齐、删除、合并、统一字体等操作。
-3. 文字区域分割。
-4. 快速建框。
-5. 字体。
-6. 排序。支持检测分镜和在文字区域上显示序号。
-7. 原图相关。支持调整译文图层透明度和与原文区域进行对齐。
-8. 编辑。支持旋转、翻转等图像编辑操作。
+1. OCR.
+2. Multiple selection. It can select multiple text areas and perform operations such as aligning, deleting, merging, and unifying fonts.
+3. Text area cutting.
+4. Quick creation of text boxes by dragging.
+5. Font.
+6. Sort. It can detect panels and display the ranking numbers on text areas.
+7. Source image related. It can adjust the transparency of the translation layer and align text areas with the original text areas.
+8. Edit. It can rotate or flip images.

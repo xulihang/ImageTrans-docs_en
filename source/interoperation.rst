@@ -1,61 +1,60 @@
-
-与第三方软件的交互
+Interaction with Third-Party Software
 ==================================================
 
-PSD相关
+PSD-related
 ------------------
 
-ImageTrans支持利用脚本调用Photoshop来实现互操作。
+ImageTrans can intereact with Photoshop using scripts.
 
-说明：如果是Windows系统并安装了完整版Photoshop，ImageTrans提供exe脚本工具，可以自动打开PS。其它情况需要自行打开PS，点击“文件-脚本-浏览”选择脚本进行操作。
+Note: If you are on a Windows system and have a full version of Photoshop installed, ImageTrans provides exe scripting tools that automatically open PS. In other cases, you need to open the PS yourself and click File->Script->Browse to run the scripts.
 
-Photoshop脚本仓库：`<https://github.com/xulihang/ImageTrans_PhotoshopScripts>`_
+Photoshop Script Repository: `<https://github.com/xulihang/ImageTrans_PhotoshopScripts>`_
 
-PSD转JPG
+PSD to JPG
 +++++++++++++
 
-软件不能直接显示PSD，需要先将PSD转换为JPG。
+The software does not support PSD files directly. You need to convert PSDs to JPGs first.
 
-通过菜单-工具-PSD转JPG打开转换工具，调用Photoshop批量进行转换。
+Open the conversion tool via Tools->PSD to JPG. It will call Photoshop to do the bulk conversion.
 
-非Windows则使用提供的JSX脚本：pdf2jpg.jsx，选择需要进行转换的目录进行转换。
+Non-Windows systems have to use the provided JSX script: pdf2jpg.jsx. Select the directory that needs to be converted.
 
-从PSD读取文字区域
-++++++++++++++++++++++++++
+Read Text Areas from PSDs
+++++++++++++++++++++++++++++++++++
 
-如果处理的是PSD文件，可以从PSD文件读取其中的文字图层的坐标、大小和文本，显示在ImageTrans中，并且回填时会自动替换文本，不用生成覆盖层。点击菜单-编辑-从PSD读取文字图层（若存在）进行操作。
+If you are working on a PSD file, you can read the coordinates, size, and text of text layers in the PSD file, display it in ImageTrans, and automatically replace the text with translation without generating an overlay layer. Click the Edit->Read text layers from PSD files, if present.
 
-非Windows则使用提供的JSX脚本：readTextLayers.jsx，选择目录进行导出，之后点击菜单-项目-导入用PS脚本导出的文字区域信息进行导入。
+Non-Windows systems have to use the provided JSX script: readTextLayers.jsx. Select the folder to export, and then click Project->Import text areas exported with PS scripts to import.
 
-读取字体名称
+Read Font Name
 +++++++++++++++
 
-在字体设置时需要填写PS专用格式的字体名称，可以使用readFont.jsx进行读取。该脚本会读取第一个文本框的字体信息。
+The font name is in a PS-specific format, which can be obtained using readFont.jsx. The script reads the font information of the first text box.
 
-生成PSD
+Generating PSD
 +++++++++++++++
 
-图片翻译完成后，可以生成PSD文件供精细调整。点击菜单-生成可编辑的PSD文件调出生成选项对话框。
+After the translation is completed, you can generate a PSD file for further adjustment in PS. Click File-Generate editable PSD files to bring up the generating options dialog box.
 
-以下是选项的说明：
+Here's a description of the options:
 
-* 存在PSD - 直接操作原来的PSD文件，PSD文件需要和JPG文件存放在一起。不选则会从JPG文件生成PSD。
-* 使用译文替换 - 不选则使用原来的文本。
-* 添加覆盖层 - 添加覆盖层以遮住原来的文字。如果对应PSD中的文字图层，则不会添加覆盖层。
-* 使用精确模式 - 非精确模式下覆盖层是一个矩形框，精确模式下软件会根据背景信息精确生成覆盖层，但会耗费较长时间。
-* 水平翻转图像 - 适用于中文漫画翻译为日语漫画的情况
-* 使用点文字 - 所有文本框都设置为点文本，适用于不需要自动换行和文字超出文本框范围的情况
-* 仅导出 - 仅导出数据文件，暂不执行生成操作
+* PSD exists - directly process the original PSD file. PSD files have to be put together with the JPG files. If it is not checked, new PSD files will be generated based on the JPG files.
+* Replace with translation - Otherwise the source text will be used.
+* Add overlay mask - Add overlays to cover the source text. If the text area corresponds to a text layer in the PSD, no overlay will be added.
+* Use Precision Mode - The overlay in imprecision mode is a rectangular box. In precision mode, the software will accurately remove text.
+* Flip image horizontally - for Chinese Comics Translated into Japanese Comics
+* Use point text - All text boxes will use point text.
+* Export only - Export data files only. Do not run Photoshop.
 
 .. image:: /images/generating_options.jpg
 
-生成完成后会跳出提示窗口，请耐心等待。期间可以切换到PS的窗口查看正在进行的操作，如果PS提出相关操作，需要人工处理。
+Please patiently wait until the prompt window pops up indicating the operation is done. During the operation you can switch to the window of PS to view the operation in progress. If PS displays relevant dialogs, you need to handle them manually.
 
-非Windows请使用脚本：addLayers.jsx。
+Non-Windows systems have to use this script: addLayers.jsx.
 
-其它
+Others
 ------------------
 
-使用文件-导出功能可以将文字导出为docx文档供翻译，并支持导回操作。
+Use File->Export to export text as a docx document for others to translate. ImageTrans can reimport the translation.
 
-另外，本工具的项目文件以json格式存储，会编程的朋友可以自由进行处理。
+In addition, the tool's project files are stored in json format and you can write your own programs to handle them.
