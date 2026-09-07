@@ -13,4 +13,5 @@ ImageTrans Documentation
    text_translation.rst
    tools.rst
    settings.rst
+   usecases.rst
 
