@@ -14,4 +14,5 @@ ImageTrans Documentation
    tools.rst
    settings.rst
    usecases.rst
+   system_requirements.rst
 
