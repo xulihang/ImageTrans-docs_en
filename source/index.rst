@@ -6,6 +6,7 @@ ImageTrans Documentation
    :caption: Contents
 
    intro.rst
+   system_requirements.rst
    gettingstarted.rst
    textarea_detection_and_text_reinjection.rst
    manga_ocr.rst
@@ -14,5 +15,3 @@ ImageTrans Documentation
    tools.rst
    settings.rst
    usecases.rst
-   system_requirements.rst
-
